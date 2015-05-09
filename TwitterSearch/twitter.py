@@ -24,10 +24,10 @@ for pair in tagged:
 print q
 
 #consumer_key, consumer_secret, access_token_key, access_token_secret
-api = TwitterAPI("tmNbyIDjNn1SkEPJENTUy9XUC",
-                 "raddZenV7CaOiR29akB0DlabmpFUwPVY1V4qZHQwRFGyqacKT3",
-                 "3051564974-ancG9igjFccXFMLe0k8OMTVmW5euR8hES4NFnRM",
-                 "XxU9lcVtnjHeYiHtSxIvqE3ub6cEgI6HBriwW4eYlfVvl")
+api = TwitterAPI("",
+                 "",
+                 "",
+                 "")
 r = api.request('search/tweets', {'q':q,'count':'20','lang':'en'})
 response = r.json()
 for post in response["statuses"]:
