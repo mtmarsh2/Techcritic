@@ -11,7 +11,7 @@ blog=json.loads(jstr)
 for page in blog:
     print page["title"]
 
-sentence = "windows 10"
+sentence = "alienware alpha"
 tokens = nltk.word_tokenize(sentence.lower())
 filtered_words = [w for w in tokens if not w in nltk.corpus.stopwords.words('english')]
 tagged = nltk.pos_tag(filtered_words)
@@ -28,7 +28,7 @@ api = TwitterAPI("tmNbyIDjNn1SkEPJENTUy9XUC",
                  "raddZenV7CaOiR29akB0DlabmpFUwPVY1V4qZHQwRFGyqacKT3",
                  "3051564974-ancG9igjFccXFMLe0k8OMTVmW5euR8hES4NFnRM",
                  "XxU9lcVtnjHeYiHtSxIvqE3ub6cEgI6HBriwW4eYlfVvl")
-r = api.request('search/tweets', {'q':q,'count':'5','lang':'en'})
+r = api.request('search/tweets', {'q':q,'count':'20','lang':'en'})
 response = r.json()
 for post in response["statuses"]:
     print post["text"]+"\n"
