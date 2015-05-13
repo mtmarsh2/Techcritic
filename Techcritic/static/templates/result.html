@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title> Techcritic</title>
+<!-- Latest compiled and minified CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script src="{{ STATIC_URL }}/js/script.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/result.css">
+</head>
+
+<body>
+		<h2 id= "element2">Techcritic</h2>
+		<h1 id= "element1"><b>Product name</b></h1>
+		
+				<form align = "center" id="searchbox" action="/search/" method="POST" />
+				<input type="text" name = "term" class="form-control" placeholder="Search Techcritic">
+				<button style="margin-top:10px;" type="submit" value= "Search" class="btn btn-primary btn-lg">Search</button>
+			</form>
+		
+	<br>
+
+		
+
+		<div class = "row">
+			<div class = "col-md-6">
+				{% for doc in prodocs%}
+				<div class="doc_container">
+					<p class="id_container" hidden>{{doc.Id}}</p>
+					<div class="text_container"><h4>Title: </h4><p>{{doc.title}}</p></div>
+					<div class="text_container"><h4>Body: </h4><p>{{doc.body}}</p></div>
+					<div class="text_container"><h4>Link to article: </h4><p>{{doc.url}}</p></div>
+					<div class="text_container"><h4>Likes: </h4>
+															<span val="up" class="like_button glyphicon glyphicon-thumbs-up"></span>
+															<p class="likes_count">{{doc.likes}}</p>
+															<span val="down" class="like_button glyphicon glyphicon-thumbs-down"></span>
+					</div>
+					<div class="text_container"><h4>Created At: </h4><p>{{doc.datetime}}</p></div>
+					<br>
+				</div>
+				{% endfor %}
+			</div>
+			<div class = "col-md-6">
+				{% for doc in avgdocs %}
+					<div class="text_container"><h4>User: </h4><p>{{doc.user}}</p></div>
+					<div class="text_container"><h4>Text: </h4><p>{{doc.text}}</p></div>
+					<div class="text_container"><h4>Link to comment: </h4><p>{{doc.source}}</p></div>
+					<div class="text_container"><h4>Created At: </h4><p>{{doc.created_at}}</p></div>
+					<br>
+				{% endfor %}
+			</div>
+			
+		
+		</div>
+		
+
+	</body>
+</html>

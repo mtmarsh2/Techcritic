@@ -1,0 +1,14 @@
+Goal: Show comments from professionals and average people on the latest tech products
+
+Steps:
+Generate list of tech articles
+Scrape articles, save scraped comments into db
+Use script to generate list of products from main object in scrapped comment title
+Create Product model instances from list and store in db
+Create Comment model instances and store in db
+
+On User Query:
+Take user query and send to server
+Use user query to find relevant product
+Use product model to lookup Prof and Avg comment instances
+Return those instances to user
